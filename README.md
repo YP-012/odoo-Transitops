@@ -4,18 +4,10 @@
 TransitOps empowers businesses to oversee their entire logistics operations in real-time. It covers vehicle tracking, driver profiling, trip dispatching, and predictive maintenance logs.
 *   **TransitOps** uses JWT tokens and an email-based OTP verification step during registration.
 
----
-## 🎬 Demo
-- https://drive.google.com/file/d/1zO4-WD5ZZP-F9dj_l0dIlv95W-a4xnL5/view?usp=sharing 
-
-https://github.com/user-attachments/assets/06eb8f06-f60a-4ceb-af86-049a0aafa0dc
-```
- 
-```
 ## 🏗️ Architecture
 ```
 
-FleetFlow_Odoo/
+odoo-Transitops/
 ├── client/          → React 18 + Vite
 │   └── src/
 │       ├── pages/
@@ -80,14 +72,14 @@ FleetFlow_Odoo/
 
 ### 1 — Clone
 ```bash
-git clone git@github.com:tej0730/FleetFlow_Odoo.git
-cd FleetFlow_Odoo
+git clone https://github.com/YP-012/odoo-Transitops
+cd odoo-Transitops
 ````
 
 ### 2 — Database Setup
 
 ```bash
-createdb fleetflow_dev
+createdb transitops_dev
 ```
 
 ### 3 — Environment Variables
@@ -119,9 +111,6 @@ npm run dev
 ```
 http://localhost:5173
 ```
-
-Demo: `admin@fleetflow.io / password123`
-
 ---
 
 ## 🌐 API Reference
