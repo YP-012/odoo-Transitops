@@ -1,0 +1,10 @@
+node_modules/
+.env
+*.log
+dist/
+.DS_Store
+temp_token.txt
+fix_pw.js
+test_*.js
+setup_git_history.sh
+rewrite_history.sh
