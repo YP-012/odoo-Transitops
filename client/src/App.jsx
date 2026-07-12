@@ -1,0 +1,43 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute'
+import Layout from './components/Layout'
+
+// Pages
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import VehicleRegistry from './pages/VehicleRegistry'
+import TripDispatcher from './pages/TripDispatcher'
+import DriverProfiles from './pages/DriverProfiles'
+import MaintenanceLogs from './pages/MaintenanceLogs'
+import FuelLogs from './pages/FuelLogs'
+import Analytics from './pages/Analytics'
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <Routes>
+        {/* Public */}
+        <Route path="/login"    element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Protected — wrapped in Layout sidebar */}
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/"            element={<Dashboard />} />
+            <Route path="/vehicles"    element={<VehicleRegistry />} />
+            <Route path="/trips"       element={<TripDispatcher />} />
+            <Route path="/drivers"     element={<DriverProfiles />} />
+            <Route path="/maintenance" element={<MaintenanceLogs />} />
+            <Route path="/fuel-logs"   element={<FuelLogs />} />
+            <Route path="/analytics"   element={<Analytics />} />
+          </Route>
+        </Route>
+
+        {/* Catch-all */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AuthProvider>
+  )
+}
