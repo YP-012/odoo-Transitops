@@ -80,8 +80,7 @@ export default function Analytics() {
           <StatCard label="Avg Cost / Vehicle" value={formatCurrency(summary.fleetCostPerVehicle)} />
           <StatCard 
             label="Fuel Efficiency" 
-            value="— km/L" 
-            note="km/L tracking requires the new Trip Logging module (Member C) to capture actual liters consumed per trip."
+            value={`${summary.fuelEfficiencyKmPerL || 0} km/L`}
           />
         </div>
       )}
